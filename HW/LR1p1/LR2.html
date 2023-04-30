@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Задание 2</title>
+</head>
+<body>
+<p>Извлеките часть строки ниже выделенную жирным шрифтом сначала с помощью метода <b>substr()</b>
+  затем с помощью <b>substring()</b> и выведите ее на страницу: </p>
+<hr />
+<p>В тайге и горах можно увидеть <b>марала, лося, белку</b>, бурундука, зайца. </p>
+<hr />
+<br>
+<script type='text/javascript'>
+//Запишем строку в переменную str1
+let str='В тайге и горах можно увидеть марала, лося, белку, бурундука, зайца.';
+
+//Пишите Ваш код здесь
+let substr = str.substr(30,19); //30 - начало, 19 - уйти вперед на 19
+document.write('<p>Извлечение с помощью метода substr(): ' + substr+"</p>");
+
+
+let substring = str.substring(30, 49); //от 30 до 49 символа
+document.write('<p>Извлечение с помощью метода substring(): ' + substring+'</p>');
+
+
+document.write('<p><b>Извлечение с помощью метода indexOf():</b></p>')
+
+let str1='В тайге и горах можно увидеть <b>марала, лося, белку</b>, бурундука, зайца.';
+let index1 = str1.indexOf('<b>'); //от <b> до <b/>
+let index2 = str1.indexOf('</b>'); //от <b> до </>b>
+let string = index2 - index1;
+document.write('<p>Извлечение с помощью метода substr(): ' + str1.substr(index1, string) +'</b></p)>');
+document.write('<p>Извлечение с помощью метода substring(): ' + str1.substring(index1, index2) +'</b></p)>');
+</script>
+</body>
+</html>

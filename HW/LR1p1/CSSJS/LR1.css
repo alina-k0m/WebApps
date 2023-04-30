@@ -1,0 +1,20 @@
+.div1 {
+width: 150px;
+height: 150px;
+background-color: red;
+float: center;
+}
+
+.div2 {
+width: 150px;
+height: 150px;
+background-color: yellow;
+float: center;
+}
+
+.div3 {
+width: 150px;
+height: 150px;
+background-color: green;
+float: center;
+}
