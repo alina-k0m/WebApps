@@ -12,7 +12,7 @@
 <script type='text/javascript'>
 txt=' yandex.ru example.com www.yandex.ru example.ru yandex http://example.com http://www.yandex.ru wiisdomweb.ru YANDEX.RU ';
 
-regex1=/...yandex.../ig;
+regex1=/yandex/ig; //g — глобальный поиск по строке. i — поиск, нечувствительный к регистру.
 
 document.write('Результат: '+'<b>'+txt.match(regex1)+'</b>');
 </script>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 2</title>
+</head>
+<body>
+
+<p>1. Создайте конструктор - <i>Automobile</i> создающий объекты со свойствами <i>color</i> (цвет),
+  <i>model</i> (модель), <i>year</i> (год выпуска), <i>manufact</i> (производитель) и методами: <i>whatColor</i>
+  (позволяющий узнать цвет автомобиля) и <i>autoInfo</i> (позволяющий узнать модель, год выпуска, и производителя
+  автомобиля). </p>
+
+<p>2. Создайте с помощью конструктора <i>Automobile</i> объекты перечисленные ниже и обратитесь к их методам
+  <i>whatColor</i> и <i>autoInfo</i>: <br />
+  1. Nissan Skyline 2007 Красный;<br />
+  2. Toyota Corolla 2009 Черный;<br />
+  3. Volkswagen Golf 2009 Синий</p>
+
+<p>3. Создайте конструктор - <i>Driver</i> наследующий свойства и методы у конструктора <i>Automobile</i>.
+  Конструктор должен добавлять к функциональности свойство driver содержащее свойства <i>name</i> (имя хозяина
+  автомобиля) и <i>experience</i> (водительский стаж) и метод driverInfo (позволяющий узнать имя и стаж хозяина
+  автомобиля).</p>
+
+<p>4. Создайте с помощью конструктора <i>Driver</i> объект: Дмитрий 3 Ford Focus 2010 Белый. И обратитесь к его
+  методам whatColor, autoInfo и driverInfo.</p>
+
+<script type='text/javascript'>
+
+  class Automobile {
+  Automobile (color, model, year, manufact){
+    this.color = color;
+    this.model = model;
+    this.year = year;
+    this.manufact = manufact;
+  }
+  whatColor() {document.write("Цвет: " + this.color + ". <br />");}
+  autoInfo() {document.write("Модель: "+this.model+ ", год выпуска: "+this.year+ ", производитель: "+ this.manufact+".<br/>");}
+  }
+
+        /*1. Nissan Skyline 2007 Красный;*/
+        var nissan = new Automobile();
+        nissan.color="красный";
+        nissan.model="Nissan Skyline";
+        nissan.year="2007";
+        nissan.manufact="Nissan";
+        nissan.whatColor();
+        nissan.autoInfo();
+
+        /*2. Toyota Corolla 2009 Черный;*/
+        var toyota= new Automobile();
+        toyota.color="черный";
+        toyota.model="Toyota Corolla";
+        toyota.year="2009";
+        toyota.manufact="Toyota";
+        toyota.whatColor();
+        toyota.autoInfo();
+
+        /*3. Volkswagen Golf 2009 Синий*/
+        var volkswagen= new Automobile();
+        volkswagen.color="синий";
+        volkswagen.model="Volkswagen Golf";
+        volkswagen.year="2009";
+        volkswagen.manufact="Volkswagen";
+        volkswagen.whatColor();
+        volkswagen.autoInfo();
+
+
+        document.write("<br/><br/><br/>");
+
+        function Driver() {
+            this.name = "name";
+            this.experience = "experience";
+            this.driverInfo = function () {
+                document.write("This car belongs to " + this.name +" with driving experience of  " + this.experience+" years <br />");
+            }
+        }
+
+        var automobile = new Automobile();
+        Driver.prototype = automobile;
+
+        /*Дмитрий 3 Ford Focus 2010 Белый*/
+        var owner= new Driver();
+        owner.name ="Дмитрий";
+        owner.experience="3";
+        owner.manufact= "Ford";
+        owner.model = "Ford Focus";
+        owner.year= "2010";
+        owner.color="Белый";
+
+        owner.whatColor();
+        owner.autoInfo();
+        owner.driverInfo();
+
+</script>
+</body>
+</html>

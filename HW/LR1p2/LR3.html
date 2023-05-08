@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 3</title>
+
+<!--
+    <script src="../lib/jquery-3.2.1.min.js"> </script>
+-->
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+</head>
+<body>
+<p>Подключите jquery.js удаленно (воспользовавшись услугой Google), чтобы увидеть работу скрипта. <br/></p>
+<input type="button" value="Нажмите на меня" />
+<script>
+$(document).ready(function(){
+
+   $("input").click(function(event){
+      alert("Поздравляем! Вы починили код!");
+   });
+
+});
+</script>
+</body>
+</html>
