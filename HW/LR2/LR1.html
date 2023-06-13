@@ -3,9 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <title>Задание 1</title>
-  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+
+    //Пишите код здесь
+    $("#pmtog").css('color', 'green');                      <!--первый элемент на странице с id="pmtog"-->
+    $("p.pr1").css('color', 'red');                         <!--все элементы p на странице с class="pr1"-->
+    $(":button").css('color', 'orange');                    <!--все button элементы на странице-->
+    $("p.pmb1, p.pmb2, p.pmb3").css('color', 'blue');
+    $("#wrap1 .pmtobr").css('color', 'brown');              <!--все элементы с class=pmtobr, которые находятся внутри элементов с id=wrap1-->
+    $("[src$='xo.jpg']").css('borderStyle', 'solid');     <!--все элементы со значениями атрибута src заканчивающимися на xo.jpg-->
+    $("#iwrap :button, #iwrap :submit").css('color', 'red');
+
+    });
+    </script>
 </head>
 <body>
+<p><b>Каждое задание отмеченное цифрой должно быть выполнено с помощью одной jQuery команды.</b></p>
+<hr/>
 
+<p><b>1.</b></p>
+<p id="pmtog">Покрасьте меня в зеленый цвет.</p>
+
+<p><b>2.</b></p>
+<h3 class="pr1">Мой цвет не должен быть изменен.</h3>
+<p class="pr1">Покрасьте меня в красный цвет.</p>
+
+<p><b>3.</b></p>
+<input type="button" value="Покрасьте меня в оранжевый"/>
+<br/><br/>
+<input type="text" value="Мой цвет не должен быть изменен"/>
+<br/><br/>
+<input type="submit" value="Мой цвет изменять не нужно"/>
+<br/><br/>
+
+<p><b>4.</b></p>
+<p class="pmb1">Покрасьте меня в синий.</p>
+<p>Мой цвет не должен быть изменен.</p>
+<p>Мой цвет не должен быть изменен.</p>
+<p class="pmb2">Покрасьте меня в синий.</p>
+<p>Мой цвет не должен быть изменен.</p>
+<p class="pmb3">Покрасьте меня в синий.</p>
+
+<p><b>5.</b></p>
+<div id="wrap1">
+    <p>Мой цвет не должен быть изменен.</p>
+    <p class="pmtobr">Покрасьте меня в коричневый.</p>
+</div>
+<p class="pmtobr">Мой цвет не должен быть изменен.</p>
+
+<p><b>6. Отобразите рамку вокруг третьего (слева) изображения. (Используйте команду css("borderStyle","solid")</b></p>
+<img src="../img/cat.jpg" style="width:200px;">
+<img src="../img/list.jpg" style="width:200px;">
+<img src="../img/xoxo.jpg" style="width:200px;">
+
+<p><b>7. </b></p>
+<div id="iwrap">
+    <input type="button" value="Покрасьте меня в красный"/>
+    <br/><br/>
+    <input type="text" value="Мой цвет не должен быть изменен"/>
+    <br/><br/>
+    <input type="submit" value="Покрасьте меня в красный"/>
+</div>
 </body>
 </html>
