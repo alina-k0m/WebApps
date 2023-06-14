@@ -2,33 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <style type="text/css">
+    <title>Задание 2</title>
+    <style>
 #code
 {
 background-color:#fffDBD;
 margin:10px;
 padding:5px;
 }
-</style>
+    </style>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script type="text/javascript">
 $(document).ready(function(){
 
 //Пишите код здесь
-$('#but1').click(function(){$('#par1').css('color','green').css('fontSize','20px');});      <!--Код обработчика click будет выполнен после одинарного щелчка мыши на элементе.-->
-$('#but1').dblclick(function(){$('#par1').css('color','black').css('fontSize','18px');});   <!--Код обработчика dblclick будет выполнен после двойного щелчка мыши на элементе.-->
+$("#but1").click(function(){$('#par1').css('color','green').css('fontSize','20px');});      <!--Код обработчика click будет выполнен после одинарного щелчка мыши на элементе.-->
+$("#but1").dblclick(function(){$('#par1').css('color','black').css('fontSize','18px');});   <!--Код обработчика dblclick будет выполнен после двойного щелчка мыши на элементе.-->
 
-$('#href1').mouseover(function(){$('#href1').css('color', 'orange');}).mouseout(function(){$('#href1').css('color', 'blue')});
+$("#href1").mouseover(function(){$('#href1').css('color', 'orange');}).mouseout(function(){$('#href1').css('color', 'blue')});
 
+$("#text1").select(function(){$(this).css('color','red').css('fontSize','20px');});
 
-//Вебинар 2_РВП_Лекция 4 + ЛР2 слайд 15
-
-
-$('#text1').select(function(){$(this).css('color','red').css('fontSize','20px');});
-
-$('#but2').toggle(function(){$('#par2').css('fontFamily','Times New Roman').css('color','red').css('border','none');},function(){$('#par2').css('fontFamily','Arial').css('color','blue');},function(){$('#par2').css('fontWeight','bold').css('fontFamily','Verdana').css('border','1px solid');});
-
+$("#but2").ready(function(){
+$("#but2")
+.click(function(){$("#par2").css('font-family','Times New Roman').css('color','red');})
+.click(function(){$("#par2").css('font-family','Arial').css('color','blue');})
+.click(function(){$("#par2").css('font-family','Verdana').css('font-weight','bold').css('border','1px solid')});
+});
 });
 
 </script>
