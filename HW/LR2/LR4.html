@@ -41,17 +41,43 @@ font-size:25px;
 $(document).ready(function(){
 
 //Пишите код здесь
+$('#but1').click(function(){
+$('#par2').empty();
+$('#par2').append($('#par1').html());
+});
+
+$('#but2').one('click',function(){
+$('#par3').append(' <b>HTML.</b>');
+$('#par4').prepend('<b>CSS </b>');
+$('#par5').prepend('<b>Java Script </b>');
+$('#par6').prepend('<b>jQuery </b>');
+});
+
+$('#but3').one('click',function(){
+$('#href1').before($('#href1').attr('href'));
+$('#but3').after(''+$('#par7').attr('class')+'');
+$(':text').after('key');
+});
+
+$('#but4').click(function(){
+$('#par8').wrap('<div id="style1"></div>');
+$('#par9').wrap('<div id="style2"></div>');
+$('#par10').wrap('<div id="style3"></div>');
+$('#par11').wrap('<div id="style4"></div>');
+});
 
 });
 </script>
 </head>
 <body>
+
 <p><b>1. После нажатия на кнопку с id=but1 содержимое невидимого абзаца с id=par1 должно быть считано и вставлено в абзац с id=par2.</b></p>
 <div id="code">
   <p id="par1">Содержимое первого абзаца.</p>
   <p id="par2">Вставьте в меня содержимое первого абзаца.</p>
   <input id="but1" type="button" value="Скопировать содержимое абзаца par1 в par2" />
 </div>
+
 <p><b>2. После нажатия на кнопку с id=but2 в абзацы par3, par4, par5 и par6 должны добавляться недостающие слова. Слова при вставке должны быть выделены жирным шрифтом.</b></p>
 <div id="code">
   <p id="par3"> Для разметки веб-страниц используется - </p>
@@ -60,6 +86,7 @@ $(document).ready(function(){
   <p id="par6"> - JavaScript библиотека значительно упрощающая написание кода.</p>
   <input id="but2" type="button" value="Добавить в абзацы выше недостающие слова" />
 </div>
+
 <p><b>3. После нажатия на кнопку с id=but3 элементы с id=href1, id=par7 и type=text должны стать оформленными соответственно своему содержимому.</b></p>
 <div id="code">
   <a id="href1" href="http://www.google.ru/">Передо мной отображено значение моего атрибута href.</a>

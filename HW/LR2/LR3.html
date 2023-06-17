@@ -118,7 +118,21 @@ padding-left:8px;
 $(document).ready(function(){
 
 //Пишите код здесь
+$("#but1").click(function(){$("#par1").fadeOut('slow')});
+$("#but2").click(function(){$("#par1").fadeIn('slow')});
 
+$("#par2").mouseover(function(){$(this).fadeTo('3000','0.3')}).mouseout(function(){$(this).fadeTo('3000','1')});
+
+$("#but3").click(function(){$("#wrap1").slideUp(1000)});
+$("#but4").click(function(){$("#wrap1").slideDown(5000)});
+
+$("#but5").click(function(){$("#redsquare")
+.animate({top:$("#square1").css('top'),left:$("#square1").css('left')},2500)
+.animate({top:$("#square2").css('top'),left:$("#square2").css('left')},1000)
+.animate({top:$("#square3").css('top'),left:$("#square3").css('left')},3000)
+.animate({top:$("#square4").css('top'),left:$("#square4").css('left')},5000)
+.animate({top:$("#square5").css('top'),left:$("#square5").css('left')},4000)
+});
 });
 
     </script>
@@ -131,6 +145,7 @@ $(document).ready(function(){
     <input id="but1" type="button" value="Спрятать абзац"/>
     <input id="but2" type="button" value="Показать абзац"/>
 </div>
+
 <p><b>2. При наведении курсора мыши на абзац с id=par2 он должен становится прозрачным (можете задавать любые значения
     прозрачности,
     но необходимо чтобы текст был видим) в течении 3 секунд (3000 милисекунд). При выведении курсора мыши за пределы
@@ -139,6 +154,7 @@ $(document).ready(function(){
 <div id="code">
     <p id="par2">Наведите на меня курсор мыши и я стану прозрачным.</p>
 </div>
+
 <p><b>3. При нажатии на кнопку с id=but3 высота элемента wrap1 должна уменьшатся до 0 в течении 5 секунд. При нажатии на
     кнопку с id=but4 элементу wrap1 в течении 7 секунд должна быть возращена стандартная высота.</b></p>
 <div id="code">
@@ -149,6 +165,7 @@ $(document).ready(function(){
     <input id="but4" type="button" value="Расширить элемент"/>
 </div>
 <hr/>
+
 <p><b>4. Создайте анимацию перемещающую красный квадрат поочередно по всем черным квадратам с цифрами. Анимация должна
     активироваться при нажатии на кнопку с id=but5. </b></p>
 <div id="code">
