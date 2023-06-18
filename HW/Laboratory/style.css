@@ -5,3 +5,9 @@ width: auto;
 height: auto;
 
 }
+
+/*расстояние между ссылками*/
+.a-list {
+line-height: 1.5;
+
+}

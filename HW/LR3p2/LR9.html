@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 9</title>
+</head>
+
+<body>
+
+<button onclick="loadPhones()" id="button">Загрузить phonebase.json!</button>
+
+<script>
+    function loadPhones() {
+
+      var xhr = new XMLHttpRequest();
+
+      xhr.open('GET', 'LR9phonebase.json', true);
+
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState != 4) return;
+
+        button.innerHTML = 'Готово!';
+
+        if (xhr.status != 200) {
+          // обработать ошибку
+          alert(xhr.status + ': ' + xhr.statusText);
+        } else {
+          // вывести результат
+          alert(xhr.responseText);
+        }
+
+      }
+
+      xhr.send();
+
+      button.innerHTML = 'Загружаю...';
+      button.disabled = true;
+    }
+  </script>
+
+</body>
+</html>

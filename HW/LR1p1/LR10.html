@@ -3,17 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Задание 10</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> <!--https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js-->
+    <script src="CSSJS/detect.js"></script>
+
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> &lt;!&ndash;https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js&ndash;&gt;
+-->
 </head>
 <body>
 <script>
 
+let user = detect.parse(navigator.userAgent);
 
-if(navigator.userAgent.indexOf('Microsoft Internet Explorer') ){
-newWin=window.open("http://yandex.ru");
+<!--Параметры браузера-->
+document.write(user.browser.family);
+document.write(user.browser.version);
+document.write(user.os.name);
+
+if (user.browser.family == 'Opera')
+{
+
+       document.write("Вы будете перенаправлены на страницу www.onliner.by");
+
+       setInterval(function(){ window.location.href ="http://www.onliner.by"; },3000);
 }
-else {
-newWin=window.open("http://google.com");
+else
+{
+
+       document.write("Вы будете перенаправлены на страницу www.google.by");
+
+       setInterval(function(){ window.location.href ="http://www.google.by"; },3000);
 }
 
 

@@ -41,29 +41,29 @@ font-size:25px;
 $(document).ready(function(){
 
 //Пишите код здесь
-$('#but1').click(function(){
-$('#par2').empty();
-$('#par2').append($('#par1').html());
+$("#but1").click(function(){
+$("#par2").empty();
+$("#par2").append($('#par1').html());
 });
 
-$('#but2').one('click',function(){
-$('#par3').append(' <b>HTML.</b>');
-$('#par4').prepend('<b>CSS </b>');
-$('#par5').prepend('<b>Java Script </b>');
-$('#par6').prepend('<b>jQuery </b>');
+$("#but2").one('click',function(){
+$("#par3").append(' <b>HTML.</b>');
+$("#par4").prepend('<b>CSS </b>');
+$("#par5").prepend('<b>Java Script </b>');
+$("#par6").prepend('<b>jQuery </b>');
 });
 
-$('#but3').one('click',function(){
-$('#href1').before($('#href1').attr('href'));
-$('#but3').after(''+$('#par7').attr('class')+'');
-$(':text').after('key');
+$("#but3").one('click',function(){
+$("#href1").before($('#href1').attr('href'));
+$("#but3").after(''+$('#par7').attr('class')+'');
+$(":text").after('key');
 });
 
-$('#but4').click(function(){
-$('#par8').wrap('<div id="style1"></div>');
-$('#par9').wrap('<div id="style2"></div>');
-$('#par10').wrap('<div id="style3"></div>');
-$('#par11').wrap('<div id="style4"></div>');
+$("#but4").click(function(){
+$("#par8").wrap('<div id="style1"></div>');
+$("#par9").wrap('<div id="style2"></div>');
+$("#par10").wrap('<div id="style3"></div>');
+$("#par11").wrap('<div id="style4"></div>');
 });
 
 });
