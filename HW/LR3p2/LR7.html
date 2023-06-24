@@ -6,14 +6,46 @@
     <script type='text/javascript'>
 
 /* Пишите код здесь */
+function start(){
+   var x=document.getElementById('var1').value;
+   var x=document.getElementById('var2').value;
+   var y=document.getElementById('var3').value;
 
+    xhttp=new XMLHttpRequest();
+    xhttp.onreadystatechange=function(){
+    if (xhttp.readyState==4 && xhttp.status==200)
+         document.getElementById('ajax').innerHTML=xhttp.responseText;
+      }
+   xhttp.open('POST','LR7testfile.php',true);
+//Установим тип передаваемого содержимого как у форм
+   xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+   var str='x='+x+'&y='+y;
+   xhttp.send(str);
+}
 
 </script>
 </head>
 <body>
+<p>Скрипт testfile.php принимает три аргумента var1, var2, var3. Значения этих
+    переменных могут быть в диапазоне от 1 до 5. Создайте AJAX запрос для обращения
+    к этому скрипту и подберите такие значения аргументов var1, var2 и var3,
+    чтобы результат выполнения скрипта был равен 8. В самом скрипте testfile.php
+    запрограммируйте вычисляемую формулу: (var2 – var1 )*var3. Если результат равен 8,
+    то сервер возвращает:</p>
+<p><i>Результат выполнения первого скрипта: 8.</i></p>
+<p><i>Поздравляем Вы подобрали правильные значения переменных!</i></p>
+<p>Если результат не равен 8, то сервер возвращает вычисленное значение.</p>
+<p>Например, <i>Результат выполнения первого скрипта: 12.</i></p>
+<p>Если вводимые на форме значения выходят за пределы 1-5, то выводить соответствующее
+    сообщение без передачи данных на сервер.</p>
 <!--
 Пишите код здесь
 -->
+<input type='text' id='var1' />
+<input type='text' id='var2' />
+<input type='text' id='var3' />
+<input type='button' value='result' onclick='start()'/>
+
 
 </body>
 </html>

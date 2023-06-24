@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <title>Задание 5</title>
     <script type='text/javascript'>
+
 function winter(){
-   var xhttp=new XMLHTTPRequest();
-   xhttp.onreadystatechange=function(){
-      if (xhttp.readyState=4 && xhttp.status=200)
+    xhttp=new XMLHttpRequest();
+    xhttp.onreadystatechange=function(){
+    if (xhttp.readyState==4 && xhttp.status==200)
          document.getElementById('res').innerHTML=xhttp.responseText;
-      }
-   xhttp.opens('GET' winter.txt true);
+    }
+   xhttp.open('GET', 'LR5winter.txt', true);
    xhttp.send();
 }
 </script>
 </head>
 <body>
+<p>Исправьте ошибки в коде. </p>
 <input type='button' value='Отправить запрос' onclick='winter()'/>
 <br /><br />
-<div id='res'>
-</div>
-
+<div id='res'> </div>
 </body>
 </html>

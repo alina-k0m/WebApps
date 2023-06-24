@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Задание 3</title>
-    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <style type="text/css">
 #el1,#el2,#el3 {
 border-style:solid;
@@ -69,11 +69,49 @@ height:18px;
 #wrap1 {
 position:relative;
 }
+
+.ui-draggable
+{
+padding:15px;
+border-style:solid;
+border-width:1px;
+width:130px;
+height:100px;
+}
+.ui-draggable-dragging
+{
+background-color:black;
+}
 </style>
     <script type="text/javascript">
 $(document).ready(function(){
 
+
 /* Пишите код здесь */
+<!--1-->
+$("#el1").draggable({cursor:"help"}); //cursor:"help" - меняет курсор
+$("#el1").resizable({animate:true}); //animate:true - плавная анимация
+
+
+<!--2-->
+$("#sort1").sortable();
+
+
+<!--3-->
+$("#el2").draggable({stack:"#drop1", stack:"#drop2"});
+$("#el3").draggable({stack:"#drop1", stack:"#drop2"});
+$("#drop1").droppable({
+drop:function(event, ui){
+ui.draggable.css("display", "none");
+$("#drop1").css("background-color", "green");
+}});
+$("#drop2").droppable({
+accept:"#el3",
+drop:function(event, ui){
+ui.draggable.css("display", "none");
+$("#drop2").css("background-color", "green");
+}});
+
 
 });
 </script>
@@ -81,7 +119,7 @@ $(document).ready(function(){
 <body>
 <p><b>1. Сделайте элемент с id=el1 перетаскиваемым и растягиваемым.</b></p>
 <div style="min-height:230px">
-    <div id="el1" class="ui-corner-all">
+    <div id="el1" class="ui-corner-all ui-widget ui-widget-header">
         <div id="head">
             Окно <b>el1</b>
         </div>
@@ -89,6 +127,7 @@ $(document).ready(function(){
     </div>
 </div>
 <hr />
+
 <p><b>2. Сделайте список с id=sort1 сортируемым и затем расставьте элементы этого списка в правильном порядке.</b></p>
 <ul id="sort1">
     <li>Второй пункт списка</li>
@@ -100,6 +139,7 @@ $(document).ready(function(){
     <li>Шестой пункт списка</li>
 </ul>
 <hr />
+
 <p><b>3. Сделайте элементы с id=el2 и id=el3 перетаскиваемыми. После этого сделайте так, чтобы первая область (c id=drop1) принимала оба элемента, а вторая (c id=drop2) только элемент с id=el3. После того, как элемент будет перетащен в принимающую его область перетаскиваемый элемент должен стать невидимым, а цвет фона области должен измениться на зеленый.</b></p>
 <div id="wrap1">
     <div id="el2" class="ui-corner-all">

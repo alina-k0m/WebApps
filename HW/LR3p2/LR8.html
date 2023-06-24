@@ -5,12 +5,48 @@
     <title>Задание 8</title>
     <script type='text/javascript'>
 /* Пишите код здесь */
+function start(){
+   xhttp=new XMLHttpRequest();
+   xhttp.open('GET','LR8bookshop.json',true);
+   xhttp.send();
+   xhttp.onreadystatechange=function(){
+      if (xhttp.readyState==4){
+         //Принятое содержимое json файла должно быть вначале обработано функцией eval
+         var json=eval( '('+xhttp.responseText+')' );
+         //Далее мы можем спокойно использовать данные
+         document.getElementById('wrap').style.display='block';
+         document.getElementById('res1').innerHTML=json.bookbase[4].author;
+         document.getElementById('res21').innerHTML=json.bookbase[6].title;
+         document.getElementById('res22').innerHTML=json.bookbase[7].title;
+         document.getElementById('res23').innerHTML=json.bookbase[8].title;
+         document.getElementById('res31').innerHTML=json.bookbase[4].quantity;
+         document.getElementById('res32').innerHTML=json.bookbase[7].quantity;
+         document.getElementById('res33').innerHTML=json.bookbase[10].quantity;
+         document.getElementById('res34').innerHTML=json.bookbase[13].quantity;
+      }
+   }
+}
+    </script>
 
-
-</script>
 </head>
 <body>
+<p>Создать AJAX-запрос для обращения к файлу bookshop.json.</p>
+<p>Необходимо считать его содержимое и вывести:</p>
+<p>1. Value 4-го тэга author на страницу</p>
+<p>2. Value 6-го, 7-го и 8-го тэга title на страницу.</p>
+<p>3. Сумму содержимого 4-го, 7-го, 10-го и 13-го тэга quantity на страницу.</p>
 <!-- Пишите код здесь -->
+<input type='button' value='Запросить содержимое' onclick='start()'/>
+<br/><br/>
+<div id='wrap' style='display:none;'>
+    <hr/>
+    <p>1. <b><span id='res1'></span></b></p>
+    <p>2. <b><span id='res21'></span></b></p>
+    <p>2. <b><span id='res22'></span></b></p>
+    <p>2. <b><span id='res23'></span></b></p>
+    <p>3. <b><span id='res34'></span> руб.</b></p>
+    <hr/>
+</div>
 
 </body>
 </html>

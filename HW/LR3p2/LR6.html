@@ -6,14 +6,61 @@
     <script type='text/javascript'>
 
 /* Пишите код здесь */
+function summer(){
+    xhttp=new XMLHttpRequest();
+    xhttp.onreadystatechange=function(){
+    if (xhttp.readyState==4 && xhttp.status==200)
+         document.getElementById('summer').innerHTML=xhttp.responseText;
+    }
+   xhttp.open('GET', '../LR3p1/LR1summer.txt', true);
+   xhttp.send();
+}
 
+function autumn(){
+    xhttp=new XMLHttpRequest();
+    xhttp.onreadystatechange=function(){
+    if (xhttp.readyState==4 && xhttp.status==200)
+         document.getElementById('autumn').innerHTML=xhttp.responseText;
+    }
+   xhttp.open('GET', '../LR3p1/LR1autumn.txt', true);
+   xhttp.send();
+}
+
+function winter(){
+    xhttp=new XMLHttpRequest();
+    xhttp.onreadystatechange=function(){
+    if (xhttp.readyState==4 && xhttp.status==200)
+         document.getElementById('winter').innerHTML=xhttp.responseText;
+    }
+   xhttp.open('GET', '../LR3p1/LR1winter.txt', true);
+   xhttp.send();
+}
+
+function spring(){
+    xhttp=new XMLHttpRequest();
+    xhttp.onreadystatechange=function(){
+    if (xhttp.readyState==4 && xhttp.status==200)
+         document.getElementById('spring').innerHTML=xhttp.responseText;
+    }
+   xhttp.open('GET', '../LR3p1/LR1spring.txt', true);
+   xhttp.send();
+}
 
 </script>
 </head>
 <body>
+<p>Создайте четыре кнопки и напишите для них код, запрашивающий с помощью
+    AJAX файлы winter.txt, summer.txt, autumn.txt, spring.txt с сервера
+    и отображающий результат на странице</p>
 <!--
 Пишите код здесь
 -->
+<input type='button' value='summer' onclick='summer()'/>
+<input type='button' value='autumn' onclick='autumn()'/>
+<input type='button' value='winter' onclick='winter()'/>
+<input type='button' value='spring' onclick='spring()'/>
+
+
 <div id='summer'> </div>
 <div id='autumn'> </div>
 <div id='winter'> </div>
