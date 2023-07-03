@@ -30,7 +30,7 @@ var sources = [];
 $('ul li').each(function(i,ele){
 sources.push({'label':$(ele).text(),'value':$(ele).text()});
 });
-$('#autocomplete').autocomplete({source: sources, minLength: 3});
+$('#autocomplete').autocomplete({source: sources, minLength: 2});
 
 <!--4-->
 $('#el1,#el2').button();

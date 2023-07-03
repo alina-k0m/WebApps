@@ -12,6 +12,7 @@ if (isset($_REQUEST['name'])) {
     }
 }
 ?>
+
 <form action="" method="get">
     <input type="hidden" name="hello" value="0">
     <input type="checkbox" name="hello" value="1">
